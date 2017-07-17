@@ -13,7 +13,7 @@ api.localhost/api/groups
 
 api.localhost/api/groups/{id}
 
-## To come
+## To Do
 
 POST, PUT, and DELETE, caching, authentification, unique queries...
 
