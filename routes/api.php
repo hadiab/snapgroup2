@@ -17,6 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+Route::get('/members', 'AuthController@register');
+
+
 Route::get('/user/1', function() {
         return response()->json([
         "user_id" => 1,
