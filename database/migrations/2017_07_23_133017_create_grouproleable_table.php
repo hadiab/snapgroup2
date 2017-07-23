@@ -13,7 +13,7 @@ class CreateGrouproleableTable extends Migration
      */
     public function up()
     {
-        Schema::create('grouproleable', function (Blueprint $table) {
+        Schema::create('grouproleables', function (Blueprint $table) {
             $table->integer('group_id');
             $table->integer('grouproleable_id');
             $table->integer('grouproleable_type');
@@ -28,6 +28,6 @@ class CreateGrouproleableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grouproleable');
+        Schema::dropIfExists('grouproleables');
     }
 }

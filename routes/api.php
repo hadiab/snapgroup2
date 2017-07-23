@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Member;
 use App\Role;
+use App\Group;
 
 /**
  * Secure API
@@ -25,16 +26,15 @@ Route::post('/login/refresh', 'AuthController@refreshToken');
  * Test Routes
  * 
  */
-Route::get('/attach_premission_to_role/{role_id}', function(){
-    $role = Role::find(1); // Member
+Route::get('/attach_premission_to_role/', function(){
+    $group = Group::find(1); // Group
 
-    $memberPermissions = [];
 
-    //$role->permissions()->attach(1);
+    $group->membersByRoles()->attach(1);
 
-    foreach($role->permissions as $permission){
-        array_push($memberPermissions, $permission->slug);
-    }
+    // foreach($role->permissions as $permission){
+    //     array_push($memberPermissions, $permission->slug);
+    // }
 
-    return $memberPermissions;
+    return $group;
 });

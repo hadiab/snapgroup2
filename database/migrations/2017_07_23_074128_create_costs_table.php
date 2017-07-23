@@ -32,6 +32,6 @@ class CreateCostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cost');
+        Schema::dropIfExists('costs');
     }
 }
