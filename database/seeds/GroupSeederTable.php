@@ -10,6 +10,8 @@ class GroupSeederTable extends Seeder {
      * @return void
      */
     public function run() {
+        DB::table('members')->truncate();
+
         DB::table('groups')->insert([
             'group_image' => 'new.png',
             'origin' => 'Israel',

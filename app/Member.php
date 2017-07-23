@@ -47,7 +47,7 @@ class Member extends Authenticatable {
     }
 
     // members roles in each groups
-    public function groupsByRole() {
-        return $this->morphToMany('App\Group', 'grouproleable');
+    public function role() {
+        return $this->belongsToMany('App\Group');
     }
 }

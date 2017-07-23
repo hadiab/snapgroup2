@@ -28,7 +28,7 @@ class CreateGroupablesTable extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('groupable');
+         Schema::dropIfExists('groupables');
     }
 }
 

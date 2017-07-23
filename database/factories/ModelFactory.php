@@ -20,6 +20,7 @@ $factory->define(App\Member::class, function (Faker\Generator $faker) {
         'last_name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
+        'profile_image' => 'noimg.png',
         'remember_token' => str_random(10),
     ];
 });

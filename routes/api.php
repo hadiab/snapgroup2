@@ -26,15 +26,16 @@ Route::post('/login/refresh', 'AuthController@refreshToken');
  * Test Routes
  * 
  */
-Route::get('/attach_premission_to_role/', function(){
+Route::get('/attach_group_members', function(){
     $group = Group::find(1); // Group
 
+    $group->members()->attach(1);
 
-    $group->membersByRoles()->attach(1);
+    return $group;
+});
 
-    // foreach($role->permissions as $permission){
-    //     array_push($memberPermissions, $permission->slug);
-    // }
+Route::get('/get_group_members', function(){
+    $group = Group::with('members')->get(); // Group
 
     return $group;
 });
