@@ -61,5 +61,15 @@ class Group extends Model
     public function transports(){
         return $this->morphedByMany('App\Transport', 'groupable');
     }
+
+    // roles in the group
+    public function roles() {
+        return $this->morphedByMany('App\Role', 'grouproleable');
+    }
+
+    // members roles in the group 
+    public function membersByRoles() {
+        return $this->morphedByMany('App\Role', 'grouproleable');
+    }
     
 }

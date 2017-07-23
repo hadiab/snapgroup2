@@ -41,8 +41,13 @@ class Member extends Authenticatable {
         $this->attributes['password'] = bcrypt($value);
     }
 
-    //members can belong to many groups
+    // members can belong to many groups
     public function groups() {
         return $this->morphToMany('App\Group', 'groupable');
+    }
+
+    // members roles in each groups
+    public function groupsByRole() {
+        return $this->morphToMany('App\Group', 'grouproleable');
     }
 }
