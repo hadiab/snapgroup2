@@ -9,7 +9,7 @@ class RoomsAvailable extends Model
 {
     protected $table = 'rooms_available';
 
-    public function hotel() {
-        $this->belongsTo('App\Hotel');
+    public function hotel(){
+        return $this->morphToMany('App\Group', 'groupable');
     }
 }
