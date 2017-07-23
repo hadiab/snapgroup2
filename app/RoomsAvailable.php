@@ -10,6 +10,6 @@ class RoomsAvailable extends Model
     protected $table = 'rooms_available';
 
     public function hotel() {
-        $this->belongsTo('App\Hotel', 'hotel_id');
+        $this->belongsTo('App\Hotel');
     }
 }

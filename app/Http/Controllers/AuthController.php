@@ -76,5 +76,4 @@ class AuthController extends Controller {
 
         return Route::dispatch($proxy);
     }
-
 }

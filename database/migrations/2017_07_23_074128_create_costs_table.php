@@ -14,7 +14,7 @@ class CreateCostTable extends Migration
     public function up()
     {
       Schema::create('costs', function (Blueprint $table) {
-            $table->increments('cost_id');
+            $table->increments('id');
             $table->timestamps();
             $table->string('flight_id');
             $table->string('hotel_id');

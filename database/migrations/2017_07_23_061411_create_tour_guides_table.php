@@ -14,7 +14,7 @@ class CreateTourGuidesTable extends Migration
     public function up()
     {
         Schema::create('tour_guides', function (Blueprint $table) {
-            $table->increments('guide_id');
+            $table->increments('id');
             $table->timestamps();
             $table->string('first_name');
             $table->string('last_name');
