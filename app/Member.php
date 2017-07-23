@@ -42,7 +42,7 @@ class Member extends Authenticatable {
     }
 
     //members can belong to many groups
-    public function groups(){
-        return $this->belongsToMany('App\Group');
+    public function groups() {
+        return $this->morphToMany('App\Group', 'groupable');
     }
 }

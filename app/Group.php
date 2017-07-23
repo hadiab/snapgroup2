@@ -14,12 +14,6 @@ use App\GuideExpertise;
 use App\Transport;
 use App\Member;
 
-<<<<<<< HEAD
-class Group extends Model {
-
-    public function plan() {
-        return $this->hasMany('App\Plan');
-=======
 //create our group model
 class Group extends Model
 {
@@ -35,38 +29,37 @@ class Group extends Model
 
     //each group belongs to many flights, which belong to many groups
     public function flights(){
-        return $this->belongsToMany('App\Flight');
+        return $this->morphedByMany('App\Flight', 'groupable');
     }
 
     //each group has many hotels, which have more than one group
     public function hotels(){
-        return $this->belongsToMany('App\Hotel');
+        return $this->morphedByMany('App\Hotel', 'groupable');
     }
 
     //each group has many members who have more than one group
     public function members(){
-        return $this->belongsToMany('App\Member');
+        return $this->morphedByMany('App\Member', 'groupable');
     }
 
     //each group has many places that have more than one group
     public function places(){
-        return $this->belongsToMany('App\Place');
+        return $this->morphedByMany('App\Place', 'groupable');
     }
 
     //holds many restaurants that belong to many groups
     public function restaurants(){ 
-        return $this->belongsToMany('App\Restaurant');
+        return $this->morphedByMany('App\Restaurant', 'groupable');
     }
 
     //holds many guides that belong to many groups
     public function guides(){
-        return $this->belongsToMany('App\TourGuide');
+        return $this->morphedByMany('App\TourGuide', 'groupable');
     }
 
     //holds many transports that belong to many groups
     public function transports(){
-        return $this->belongsToMany('App\Transport');
->>>>>>> c3a999ebc5f1275f972bc8b4fa5aa2685bf166d6
+        return $this->morphedByMany('App\Transport', 'groupable');
     }
     
 }
