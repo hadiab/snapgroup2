@@ -17,14 +17,22 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-/* Secure API */
+
+
+/**
+ * Secure API
+ * 
+ */
 Route::group(['middleware' => 'auth:api'], function(){
-    Route::get('/members', 'MemberController@getMembers');
-    Route::get('/member/{id}', 'MemberController@getMember');    
+    
+    Route::get('/member/{id}', 'MemberController@getMember'); 
 });
 
-//Auth::routes();
+/**
+ * Public API
+ * 
+ */
+Route::get('/members', 'MemberController@getMembers');
 
-/* Membes API */
-// Route::get('/members', 'MemberController@getMembers');
-// Route::get('/member/{id}', 'MemberController@getMember');
+
+Route::post('/login', 'AuthController@authenticate');

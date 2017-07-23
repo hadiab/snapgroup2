@@ -13,7 +13,7 @@ class MemberController extends Controller {
     }
 
     public function getMember($id){
-        $member = Member::where('member_id', $id)->get();
+        $member = Member::find($id);
         return response()->json($member);
     }
 

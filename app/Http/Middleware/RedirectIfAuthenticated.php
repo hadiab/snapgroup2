@@ -16,7 +16,7 @@ class RedirectIfAuthenticated {
      */
     public function handle($request, Closure $next, $guard = null){
         if (Auth::guard($guard)->check()) {
-            return redirect('/test');
+            return redirect('/');
             //return response()->json(['error' => 'true']);
         }
 
