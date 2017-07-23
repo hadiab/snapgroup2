@@ -14,7 +14,7 @@ class CreateTransportsTable extends Migration
     public function up()
     {
         Schema::create('transports', function (Blueprint $table) {
-            $table->increments('transport_id');
+            $table->increments('id');
             $table->timestamps();
         });
     }

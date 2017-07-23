@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCostTable extends Migration
+class CreateCostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateCostTable extends Migration
     public function up()
     {
       Schema::create('costs', function (Blueprint $table) {
-            $table->increments('cost_id');
+            $table->increments('id');
             $table->timestamps();
             $table->string('flight_id');
             $table->string('hotel_id');

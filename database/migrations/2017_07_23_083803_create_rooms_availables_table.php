@@ -14,10 +14,10 @@ class CreateRoomsAvailablesTable extends Migration
     public function up()
     {
         Schema::create('rooms_available', function (Blueprint $table) {
-            $table->increments('rooms_available_id');
+            $table->increments('id');
             $table->timestamps();
             $table->string('hotel_id');
-            $table->int('open_rooms');
+            $table->integer('open_rooms');
         });
     }
 

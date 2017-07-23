@@ -14,7 +14,7 @@ class CreateGuideExpertisesTable extends Migration
     public function up()
     {
         Schema::create('guide_expertise', function (Blueprint $table) {
-            $table->increments('guide_expertise_id');
+            $table->increments('id');
             $table->string('guide_id');
             $table->string('religion_tour');
             $table->string('families');

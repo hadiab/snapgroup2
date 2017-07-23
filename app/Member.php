@@ -2,12 +2,15 @@
 
 namespace App;
 
+//declare our depencies, add passport authentification
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Group;
 
 class Member extends Authenticatable {
-    
+
+    //implement our interface methods
     use HasApiTokens, Notifiable;
 
     /**
@@ -36,5 +39,10 @@ class Member extends Authenticatable {
      */
     public function setPasswordAttribute($value){
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    //members can belong to many groups
+    public function groups(){
+        return $this->belongsToMany('App\Group');
     }
 }

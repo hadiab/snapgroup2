@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Member;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,12 +13,6 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-
 
 /**
  * Secure API
@@ -35,3 +30,13 @@ Route::group(['middleware' => 'auth:api'], function(){
 Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@authenticate');
 Route::post('/login/refresh', 'AuthController@refreshToken');
+
+/**
+ * Test Routes
+ * 
+ */
+Route::get('/attach_role_to_user', function(){
+    $member = Member::find(1);
+
+    return $member;
+});
