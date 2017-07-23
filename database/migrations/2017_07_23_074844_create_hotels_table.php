@@ -18,8 +18,8 @@ class CreateHotelsTable extends Migration
             $table->timestamps();
             $table->string('hotel_name');
             $table->string('location');
-            $table->int('location_lat');
-            $table->int('location_long');
+            $table->integer('location_lat');
+            $table->integer('location_long');
         });
     }
 

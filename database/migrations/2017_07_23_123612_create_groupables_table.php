@@ -14,6 +14,7 @@ class CreateGroupablesTable extends Migration
     public function up()
     {
             Schema::create('groupables', function (Blueprint $table) { 
+                
             $table->integer('group_id');
             $table->integer('groupable_id');
             $table->string('groupable_type');

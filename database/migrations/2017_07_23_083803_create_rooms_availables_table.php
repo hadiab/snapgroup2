@@ -17,7 +17,7 @@ class CreateRoomsAvailablesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('hotel_id');
-            $table->int('open_rooms');
+            $table->integer('open_rooms');
         });
     }
 

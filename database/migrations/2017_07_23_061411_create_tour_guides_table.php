@@ -19,7 +19,7 @@ class CreateTourGuidesTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('license_num');
-            $table->int('age');
+            $table->integer('age');
             $table->string('website');
             $table->string('facebook');
             $table->string('twitter');
@@ -29,7 +29,7 @@ class CreateTourGuidesTable extends Migration
             $table->string('pinterest');
             $table->text('tos');
             $table->string('country');
-            $table->int('zip');
+            $table->integer('zip');
         });
     }
 
