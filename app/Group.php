@@ -61,4 +61,5 @@ class Group extends Model
     public function transports(){
         return $this->morphedByMany('App\Transport', 'groupable');
     }
- }
+    
+}
