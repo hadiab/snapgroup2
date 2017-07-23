@@ -24,15 +24,14 @@ use Illuminate\Http\Request;
  * 
  */
 Route::group(['middleware' => 'auth:api'], function(){
-    
     Route::get('/member/{id}', 'MemberController@getMember'); 
+    Route::get('/members', 'MemberController@getMembers');
 });
 
 /**
  * Public API
  * 
  */
-Route::get('/members', 'MemberController@getMembers');
-
-
+Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@authenticate');
+Route::post('/login/refresh', 'AuthController@refreshToken');

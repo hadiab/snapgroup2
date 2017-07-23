@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Member extends Authenticatable {
+    
     use HasApiTokens, Notifiable;
 
     /**
@@ -26,4 +27,14 @@ class Member extends Authenticatable {
     protected $hidden = [
         'password', 'remember_token'
     ];
+
+    /**
+     * Password encrypt mutator
+     *
+     * @param String $value
+     * @return void
+     */
+    public function setPasswordAttribute($value){
+        $this->attributes['password'] = bcrypt($value);
+    }
 }

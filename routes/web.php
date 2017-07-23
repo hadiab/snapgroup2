@@ -10,13 +10,3 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::post('oauth/token', [
-    'middleware' => 'password-grant',
-    'uses' => '\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken'
-]);
-
-Route::post('oauth/token/refresh', [
-    'middleware' => ['web', 'auth', 'password-grant'],
-    'uses' => '\Laravel\Passport\Http\Controllers\TransientTokenController@refresh'
-]);
