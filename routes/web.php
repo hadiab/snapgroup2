@@ -1,5 +1,5 @@
-<?php
 
+<?php
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', 'PagesController@index')->name('home');
+Route::get('/', function(){
+    return "Server Running...";
+});

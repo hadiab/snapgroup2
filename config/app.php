@@ -163,6 +163,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // Add Passport authentification service
+        Laravel\Passport\PassportServiceProvider::class,
+
+        //add auto generator for factory testing
+        Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -176,6 +182,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        
 
     ],
 
