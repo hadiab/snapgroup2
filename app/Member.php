@@ -50,4 +50,9 @@ class Member extends Authenticatable {
     public function roles() {
         return $this->belongsToMany('App\Role');
     }
+
+    // Check the role of the Memeber
+    public function isMember(){
+        return $this->roles()->slug === 'member';
+    }
 }

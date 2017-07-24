@@ -19,7 +19,7 @@ class GroupPolicy
      */
     public function view(Member $user, Group $group)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class GroupPolicy
      */
     public function create(Member $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -40,9 +40,11 @@ class GroupPolicy
      * @param  \App\Group  $group
      * @return mixed
      */
-    public function update(Member $user, Group $group)
+    public function update(Member $member, Group $group)
     {
-        //
+        if($user->roles->slug === 'member'){
+
+        }
     }
 
     /**
