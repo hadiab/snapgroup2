@@ -35,7 +35,7 @@ Route::get('/attach_group_members', function(){
 });
 
 Route::get('/get_group_members', function(){
-    $group = Group::with('members')->get(); // Group
+    $group = Group::with('members.roles')->get()->find(1); // Group
 
     return $group;
 });

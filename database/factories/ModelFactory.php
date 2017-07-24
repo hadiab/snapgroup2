@@ -24,70 +24,17 @@ $factory->define(App\Member::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(App\Cost::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\Restaurant::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\Plan::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\Transport::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\TourGuide::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
 
 $factory->define(App\Group::class, function (Faker\Generator $faker) {
     return [
-        'group_title' => $faker->word,
+        'group_title' => $faker->sentence,
         'group_desc' => $faker->text,
-        'start-date' => $faker->date(),
-        'end-date' => $faker->date(),
-        'time_until' => $faker->randomNumber(),
-        'time_remaining' => $faker->randomNumber(),
-        'group_profile_pic' => $faker->word,
+        'start_date' => $faker->date(),
+        'end_date' => $faker->date(),
+        'origin' => $faker->city,
+        'destination' => $faker->city,
+        'group_image' => $faker->imageUrl($width = 640, $height = 480),
     ];
 });
 
-$factory->define(App\GuideExpertise::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\Update::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\Place::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\Hotel::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\RoomsAvailable::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
-
-$factory->define(App\Flight::class, function (Faker\Generator $faker) {
-    return [
-    ];
-});
 

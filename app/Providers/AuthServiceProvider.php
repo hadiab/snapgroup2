@@ -16,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Group' => 'App\Policies\GroupPolicy',
     ];
 
     /**
@@ -27,14 +28,18 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // Passport Routes Setup
         Passport::routes(function ($router) {
             $router->forAccessTokens();
             $router->forPersonalAccessTokens();
             $router->forTransientTokens();
         });
 
+        // Access token and refresh token expire
         Passport::tokensExpireIn(Carbon::now()->addMinutes(30));
-
         Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
+
+        // Gates
+        Gate::resource('groups', 'GroupPolicy');
     }
 }

@@ -47,7 +47,7 @@ class Member extends Authenticatable {
     }
 
     // members roles in each groups
-    public function role() {
-        return $this->belongsToMany('App\Group');
+    public function roles() {
+        return $this->belongsToMany('App\Role');
     }
 }

@@ -10,16 +10,8 @@ class GroupSeederTable extends Seeder {
      * @return void
      */
     public function run() {
-        DB::table('members')->truncate();
+        DB::table('groups')->truncate();
 
-        DB::table('groups')->insert([
-            'group_image' => 'new.png',
-            'origin' => 'Israel',
-            'destination' => 'Spain',
-            'group_title' => 'Trip To Spain',
-            'group_desc' => 'Trip to spain, we are going...',
-            'start_date' => Carbon::now(),
-            'end_date' => Carbon::now()->addDays(10),
-        ]);
+        $members = factory(App\Group::class, 10)->create();
     }
 }

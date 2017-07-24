@@ -15,11 +15,11 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('group_title');
+            $table->string('group_desc');
             $table->string('group_image');
             $table->string('origin');
             $table->string('destination');
-            $table->string('group_title');
-            $table->string('group_desc');
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

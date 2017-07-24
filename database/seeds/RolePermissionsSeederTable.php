@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Role;
+use App\Member;
 
 class RolePermissionsSeederTable extends Seeder
 {
@@ -15,8 +16,8 @@ class RolePermissionsSeederTable extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         DB::table('roles')->truncate();
-
         DB::table('permissions')->truncate();
+        DB::table('permission_role')->truncate();
 
         DB::table('roles')->insert([
             'type' => 'Member',
@@ -49,9 +50,13 @@ class RolePermissionsSeederTable extends Seeder
         ]);
 
         // Attach a permission to role id = 1
-        $role = Role::find(1);
-        $role->permissions()->attach(1);
-        $role->permissions()->attach(2);
+        $member_role = Role::find(1);
+        $member_role->permissions()->attach(1); // Create Group
+        $member_role->permissions()->attach(2); // Update Group
+
+        // Attach user to role
+        $user = Member::find(1);
+        $user->roles()->attach($member_role);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;'); 
     }

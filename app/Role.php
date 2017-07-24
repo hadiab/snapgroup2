@@ -15,13 +15,9 @@ class Role extends Model {
         return $this->belongsToMany('App\Permission');
     }
 
+    // Get the member associate with the role
     public function Members(){
         return $this->belongsToMany('App\Member');
-    }
-
-    // members roles in each groups
-    public function groups() {
-        return $this->morphToMany('App\Group', 'grouproleable');
     }
     
 }
